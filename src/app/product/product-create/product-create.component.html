@@ -1,0 +1,33 @@
+<h2>tao san pham moi</h2>
+<form [formGroup]="formCreateProduct" (ngSubmit)="createProduct()">
+  <div>
+    <label for="name">ten san pham</label><br>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="price">gia san pham</label><br>
+    <input type="number" id="price" formControlName="price">
+  </div>
+  <div>
+    <label for="quantity">gia san pham</label><br>
+    <input type="number" id="quantity" formControlName="quantity">
+  </div>
+  <div>
+    <label for="description">mo ta san pham</label><br>
+    <input type="text" id="description" formControlName="description">
+  </div>
+  <div>
+    <label for="image">anh san pham</label><br>
+    <input type="file" id="image" formControlName="image">
+  </div>
+  <div>
+    <label for="category">loai san pham</label><br>
+    <select id="category" formControlName="categoryId">
+      <option *ngFor="let category  of categories" [value]="category.id">
+        {{category.name}}
+      </option>
+
+    </select>
+  </div>
+  <div><button>tao moi</button></div>
+</form>
